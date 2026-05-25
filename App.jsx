@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { FaTelegramPlane as IcTelegram, FaArrowRight as IcArrow } from 'react-icons/fa';
+
 /* ─── GLOBAL STYLES ─────────────────────────────────────────── */
 const G = () => (
   <style>{`

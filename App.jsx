@@ -1,14 +1,24 @@
-import React, { useState } from "react";
-
 export default function App() {
-  const [activeFaq, setActiveFaq] = useState(null);
-
-  const toggleFaq = (index) => {
-    setActiveFaq(activeFaq === index ? null : index);
+  const toggleFaq = (id) => {
+    const content = document.getElementById(`faq-content-${id}`);
+    const arrow = document.getElementById(`faq-arrow-${id}`);
+    if (content && arrow) {
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        arrow.style.transform = 'rotate(180deg)';
+      } else {
+        content.classList.add('hidden');
+        arrow.style.transform = 'rotate(0deg)';
+      }
+    }
   };
 
+  if (typeof window !== 'undefined') {
+    window.toggleFaq = toggleFaq;
+  }
+
   return (
-    <div className="min-h-screen bg-[#050505] text-[#a3a3a3] antialiased selection:bg-white selection:text-black pb-20">
+    <div className="min-h-screen bg-[#050505] text-[#a3a3a3] antialiased pb-20 font-sans">
       
       {/* Навигационная панель */}
       <nav className="fixed top-0 w-full z-50 bg-[#050505]/75 backdrop-blur-xl border-b border-white/5 py-5">
@@ -28,7 +38,7 @@ export default function App() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-white/[0.03] to-transparent blur-3xl pointer-events-none" />
         
         <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full mb-8 text-xs font-medium text-white tracking-wider uppercase">
-          <span className="w-1.5 h-1.5 bg-[#34c759] rounded-full shadow-[0_0_10px_#34c759]" />
+          <span className="w-1.5 h-1.5 bg-[#34c759] rounded-full" style={{ boxShadow: '0 0 10px #34c759' }} />
           v2.4.0 Early Access
         </div>
         
@@ -64,7 +74,7 @@ export default function App() {
         </div>
       </header>
 
-      {/* Раздел Features (Функции) */}
+      {/* Раздел Features */}
       <section id="features" className="max-w-6xl mx-auto px-6 py-24">
         <div className="mb-14">
           <span className="text-xs font-bold text-[#636366] uppercase tracking-widest block mb-2">Capabilities</span>
@@ -72,55 +82,44 @@ export default function App() {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white/[0.01] border border-white/5 rounded-2xl p-8 hover:border-white/10 hover:bg-white/[0.02] transition-all">
+          <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 hover:border-white/10 hover:bg-white/[0.04] transition-all">
             <div className="text-white mb-5 text-lg">✨</div>
             <h3 className="text-white font-medium text-lg mb-2">Auto Dodge</h3>
             <p className="text-[#636366] text-sm leading-relaxed">Высокоточный алгоритм расчета векторов движения для плавного уклонения от летящих объектов в автоматическом режиме.</p>
           </div>
-          <div className="bg-white/[0.01] border border-white/5 rounded-2xl p-8 hover:border-white/10 hover:bg-white/[0.02] transition-all">
+          <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 hover:border-white/10 hover:bg-white/[0.04] transition-all">
             <div className="text-white mb-5 text-lg">✨</div>
             <h3 className="text-white font-medium text-lg mb-2">Aim Bot & Assist</h3>
             <p className="text-[#636366] text-sm leading-relaxed">Умная корректировка векторов наведения с упреждением траектории движения цели для идеального позиционирования атаки.</p>
           </div>
-          <div className="bg-white/[0.01] border border-white/5 rounded-2xl p-8 hover:border-white/10 hover:bg-white/[0.02] transition-all">
+          <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 hover:border-white/10 hover:bg-white/[0.04] transition-all">
             <div className="text-white mb-5 text-lg">✨</div>
             <h3 className="text-white font-medium text-lg mb-2">Xray Vision</h3>
             <p className="text-[#636366] text-sm leading-relaxed">Внешнее графическое наложение, отображающее контуры объектов в слепых зонах и зонах растительности.</p>
           </div>
-          <div className="bg-white/[0.01] border border-white/5 rounded-2xl p-8 hover:border-white/10 hover:bg-white/[0.02] transition-all">
+          <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 hover:border-white/10 hover:bg-white/[0.04] transition-all">
             <div className="text-white mb-5 text-lg">✨</div>
             <h3 className="text-white font-medium text-lg mb-2">Combat Aura</h3>
             <p className="text-[#636366] text-sm leading-relaxed">Автоматическая координация ближнего боя, позволяющая оптимизировать тайминги без необходимости ручного контроля.</p>
           </div>
-          <div className="bg-white/[0.01] border border-white/5 rounded-2xl p-8 hover:border-white/10 hover:bg-white/[0.02] transition-all">
+          <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 hover:border-white/10 hover:bg-white/[0.04] transition-all">
             <div className="text-white mb-5 text-lg">✨</div>
             <h3 className="text-white font-medium text-lg mb-2">Hide Gadget</h3>
             <p className="text-[#636366] text-sm leading-relaxed">Оптимизация сетевых пакетов анимации для маскировки момента активации ключевых способностей (например, гаджета Dyna).</p>
           </div>
-          <div className="bg-white/[0.01] border border-white/5 rounded-2xl p-8 hover:border-white/10 hover:bg-white/[0.02] transition-all">
+          <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 hover:border-white/10 hover:bg-white/[0.04] transition-all">
             <div className="text-white mb-5 text-lg">✨</div>
             <h3 className="text-white font-medium text-lg mb-2">Hold2Shoot</h3>
             <p className="text-[#636366] text-sm leading-relaxed">Адаптивный режим ведения непрерывного огня по удержанию триггера для всех классов персонажей, как у Amber.</p>
           </div>
-          <div className="bg-white/[0.01] border border-white/5 rounded-2xl p-8 hover:border-white/10 hover:bg-white/[0.02] transition-all">
-            <div className="text-white mb-5 text-lg">✨</div>
-            <h3 className="text-white font-medium text-lg mb-2">Show Ammo</h3>
-            <p className="text-[#636366] text-sm leading-relaxed">Дополнительный HUD-оверлей, транслирующий точный уровень шкалы боеприпасов и перезарядки оппонентов.</p>
-          </div>
-          <div className="bg-white/[0.01] border border-white/5 rounded-2xl p-8 hover:border-white/10 hover:bg-white/[0.02] transition-all">
-            <div className="text-white mb-5 text-lg">✨</div>
-            <h3 className="text-white font-medium text-lg mb-2">AutoFarm System</h3>
-            <p className="text-[#636366] text-sm leading-relaxed">Автоматизированный скрипт симуляции игровых сессий для оптимизации рутинных процессов исключительно на низких рангах.</p>
-          </div>
         </div>
       </section>
 
-      {/* Раздел Pricing (Цены) */}
+      {/* Раздел Pricing */}
       <section id="pricing" className="max-w-6xl mx-auto px-6 py-24">
         <div className="text-center mb-16">
           <span className="text-xs font-bold text-[#636366] uppercase tracking-widest block mb-2">Premium Access</span>
           <h2 className="text-white text-3xl font-semibold tracking-tight mb-3">Тарифные планы платформы</h2>
-          <p className="text-[#636366] text-sm">Получите автоматический доступ к экосистеме Affow через официального бота.</p>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -128,19 +127,8 @@ export default function App() {
             <h3 className="text-white font-medium text-xl mb-4">Starter Access</h3>
             <div className="flex items-baseline gap-1.5 mb-8">
               <span className="text-white text-4xl font-bold tracking-tight">250</span>
-              <span className="text-[#8e8e93] text-sm font-medium">Telegram Stars / 30 дней</span>
+              <span className="text-[#8e8e93] text-sm font-medium">Stars / 30 дней</span>
             </div>
-            <ul className="space-y-4 flex-grow mb-10">
-              <li className="text-sm text-[#8e8e93] flex items-center gap-2.5">
-                <span className="text-white text-xs">✓</span> Полный доступ ко всем модулям
-              </li>
-              <li className="text-sm text-[#8e8e93] flex items-center gap-2.5">
-                <span className="text-white text-xs">✓</span> Фоновые авто-обновления
-              </li>
-              <li className="text-sm text-[#8e8e93] flex items-center gap-2.5">
-                <span className="text-white text-xs">✓</span> Поддержка 24/7
-              </li>
-            </ul>
             <a href="https://t.me/antiscamprjectbot" className="w-full py-3.5 rounded-xl text-center text-sm font-semibold bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all">Приобрести тариф</a>
           </div>
 
@@ -149,19 +137,8 @@ export default function App() {
             <h3 className="text-white font-medium text-xl mb-4">Extended Access</h3>
             <div className="flex items-baseline gap-1.5 mb-8">
               <span className="text-white text-4xl font-bold tracking-tight">500</span>
-              <span className="text-[#8e8e93] text-sm font-medium">Telegram Stars / 90 дней</span>
+              <span className="text-[#8e8e93] text-sm font-medium">Stars / 90 дней</span>
             </div>
-            <ul className="space-y-4 flex-grow mb-10">
-              <li className="text-sm text-[#8e8e93] flex items-center gap-2.5">
-                <span className="text-white text-xs">✓</span> Экономия 33% по сравнению со Starter
-              </li>
-              <li className="text-sm text-[#8e8e93] flex items-center gap-2.5">
-                <span className="text-white text-xs">✓</span> Приоритетный доступ к бета-тестам
-              </li>
-              <li className="text-sm text-[#8e8e93] flex items-center gap-2.5">
-                <span className="text-white text-xs">✓</span> Выделенная линия поддержки
-              </li>
-            </ul>
             <a href="https://t.me/antiscamprjectbot" className="w-full py-3.5 rounded-xl text-center text-sm font-semibold bg-white text-black hover:bg-[#e5e5ea] transition-all">Приобрести тариф</a>
           </div>
 
@@ -169,19 +146,8 @@ export default function App() {
             <h3 className="text-white font-medium text-xl mb-4">Infinite Access</h3>
             <div className="flex items-baseline gap-1.5 mb-8">
               <span className="text-white text-4xl font-bold tracking-tight">750</span>
-              <span className="text-[#8e8e93] text-sm font-medium">Telegram Stars / Навсегда</span>
+              <span className="text-[#8e8e93] text-sm font-medium">Stars / Навсегда</span>
             </div>
-            <ul className="space-y-4 flex-grow mb-10">
-              <li className="text-sm text-[#8e8e93] flex items-center gap-2.5">
-                <span className="text-white text-xs">✓</span> Единоразовый платеж без подписок
-              </li>
-              <li className="text-sm text-[#8e8e93] flex items-center gap-2.5">
-                <span className="text-white text-xs">✓</span> Пожизненный доступ ко всем версиям
-              </li>
-              <li className="text-sm text-[#8e8e93] flex items-center gap-2.5">
-                <span className="text-white text-xs">✓</span> VIP-сообщество и чат игроков
-              </li>
-            </ul>
             <a href="https://t.me/antiscamprjectbot" className="w-full py-3.5 rounded-xl text-center text-sm font-semibold bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all">Приобрести тариф</a>
           </div>
         </div>
@@ -195,53 +161,33 @@ export default function App() {
         </div>
         
         <div className="flex flex-col gap-3">
-          {[
-            {
-              q: "Это безопасно для учетной записи?",
-              a: "Да. Наш продукт не является читом или сторонним модифицированным софтом, изменяющим внутреннюю память игры. Это легитимная система внешнего аналитического оверлея (External Overlay), работающая поверх экрана, собирающая данные и помогающая оптимизировать задержку ввода."
-            },
-            {
-              q: "Какие платформы поддерживаются?",
-              a: "Модули полностью оптимизированы для мобильных операционных систем iOS, Android, а также адаптированы для стабильной работы на официальных ПК-эмуляторах."
-            },
-            {
-              q: "Как часто происходят обновления?",
-              a: "Все алгоритмы трекинга обновляются автоматически в фоновом режиме на стороне наших облачных серверов, поэтому вам не нужно вручную переустанавливать пакеты данных."
-            },
-            {
-              q: "Где отслеживать новости?",
-              a: "Все официальные объявления, патчноуты и закрытые розыгрыши доступов публикуются исключительно в нашем Telegram-канале @enuau."
-            }
-          ].map((item, index) => (
-            <div key={index} className="border border-white/5 bg-white/[0.01] rounded-2xl overflow-hidden">
-              <button className="w-full p-6 bg-transparent text-left cursor-pointer flex justify-between items-center text-white font-medium text-base hover:bg-white/[0.01]" onClick={() => toggleFaq(index)}>
-                <span>{item.q}</span>
-                <span className="text-[#48484a] transition-transform duration-200" style={{transform: activeFaq === index ? 'rotate(180deg)' : 'rotate(0deg)'}}>↓</span>
-              </button>
-              {activeFaq === index && (
-                <div className="px-6 pb-6 text-sm text-[#636366] leading-relaxed">
-                  {item.a}
-                </div>
-              )}
+          <div className="border border-white/5 bg-white/[0.02] rounded-2xl overflow-hidden">
+            <button className="w-full p-6 bg-transparent text-left cursor-pointer flex justify-between items-center text-white font-medium text-base hover:bg-white/[0.04]" onClick={() => window.toggleFaq(0)}>
+              <span>Это безопасно для учетной записи?</span>
+              <span id="faq-arrow-0" className="text-[#48484a] transition-transform duration-200">↓</span>
+            </button>
+            <div id="faq-content-0" className="hidden px-6 pb-6 text-sm text-[#636366] leading-relaxed">
+              Да. Наш продукт не является читом или сторонним софтом. Это легитимная система внешнего аналитического оверлея (External Overlay), работающая поверх экрана.
             </div>
-          ))}
+          </div>
+
+          <div className="border border-white/5 bg-white/[0.02] rounded-2xl overflow-hidden">
+            <button className="w-full p-6 bg-transparent text-left cursor-pointer flex justify-between items-center text-white font-medium text-base hover:bg-white/[0.04]" onClick={() => window.toggleFaq(1)}>
+              <span>Какие платформы поддерживаются?</span>
+              <span id="faq-arrow-1" className="text-[#48484a] transition-transform duration-200">↓</span>
+            </button>
+            <div id="faq-content-1" className="hidden px-6 pb-6 text-sm text-[#636366] leading-relaxed">
+              Модули полностью оптимизированы для операционных систем iOS, Android, а также адаптированы для работы на ПК-эмуляторах.
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Подвал */}
-      <footer className="border-t border-white/5 pt-14 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
-          <div className="text-center sm:text-left text-xs text-[#3a3a3c] leading-relaxed">
-            <strong className="text-gray-400">AFFOW SITE</strong><br />
-            Платформа внешней оптимизации игровых параметров и аналитики.<br />
-            Продукт не нарушает правила пользовательских соглашений игровых платформ.
-          </div>
-          <div className="text-center sm:text-right text-xs text-[#3a3a3c] leading-relaxed">
-            © 2026 Premium Startup Landing.<br />
-            Early Access Status: <span className="text-[#34c759] font-semibold">Stable & Online</span>
-          </div>
-        </div>
+      <footer className="border-t border-white/5 pt-14 px-6 text-center sm:text-left text-xs text-[#3a3a3c]">
+        <p>© 2026 AFFOW SITE. Все права защищены. Статус: Stable & Online</p>
       </footer>
+
     </div>
   );
 }

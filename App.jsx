@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function App() {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -75,7 +75,7 @@ export default function App() {
           <div className="bg-white/[0.01] border border-white/5 rounded-2xl p-8 hover:border-white/10 hover:bg-white/[0.02] transition-all">
             <div className="text-white mb-5 text-lg">✨</div>
             <h3 className="text-white font-medium text-lg mb-2">Auto Dodge</h3>
-            <p className="text-[#636366] text-sm浏览 leading-relaxed">Высокоточный алгоритм расчета векторов движения для плавного уклонения от летящих объектов в автоматическом режиме.</p>
+            <p className="text-[#636366] text-sm leading-relaxed">Высокоточный алгоритм расчета векторов движения для плавного уклонения от летящих объектов в автоматическом режиме.</p>
           </div>
           <div className="bg-white/[0.01] border border-white/5 rounded-2xl p-8 hover:border-white/10 hover:bg-white/[0.02] transition-all">
             <div className="text-white mb-5 text-lg">✨</div>
@@ -231,7 +231,7 @@ export default function App() {
       {/* Подвал */}
       <footer className="border-t border-white/5 pt-14 px-6">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
-          <div className="text-center sm:text-left text-xs text-[#3a3a3c] Combined leading-relaxed">
+          <div className="text-center sm:text-left text-xs text-[#3a3a3c] leading-relaxed">
             <strong className="text-gray-400">AFFOW SITE</strong><br />
             Платформа внешней оптимизации игровых параметров и аналитики.<br />
             Продукт не нарушает правила пользовательских соглашений игровых платформ.

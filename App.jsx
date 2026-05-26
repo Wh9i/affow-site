@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function App() {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -9,7 +9,7 @@ export default function App() {
 
   return (
     <div className="app-container">
-      {/* Встроенные стили для идеального отображения без Tailwind */}
+      {/* Встроенные премиум-стили */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
@@ -18,6 +18,10 @@ export default function App() {
           margin: 0;
           padding: 0;
           font-family: 'Inter', -apple-system, sans-serif;
+        }
+
+        html {
+          scroll-behavior: smooth;
         }
 
         body {
@@ -30,6 +34,7 @@ export default function App() {
         .app-container {
           background-color: #050505;
           min-height: 100vh;
+          padding-bottom: 40px;
         }
 
         /* Навигация */
@@ -41,7 +46,7 @@ export default function App() {
           background: rgba(5, 5, 5, 0.75);
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
-          border-b: 1px solid rgba(255, 255, 255, 0.05);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
           padding: 20px 0;
         }
 
@@ -51,8 +56,6 @@ export default function App() {
           padding: 0 24px;
           display: flex;
           justify-content: space-between;
-          items-center: center;
-          display: flex;
           align-items: center;
         }
 
@@ -66,6 +69,10 @@ export default function App() {
         .nav-links {
           display: flex;
           gap: 32px;
+        }
+
+        @media (max-width: 600px) {
+          .nav-links { display: none; }
         }
 
         .nav-links a {
@@ -150,7 +157,7 @@ export default function App() {
         }
 
         @media (max-width: 768px) {
-          .hero h1 { font-size: 38px; }
+          .hero h1 { font-size: 36px; }
         }
 
         .hero p {
@@ -213,9 +220,12 @@ export default function App() {
           margin: 0 auto;
         }
 
+        @media (max-width: 480px) {
+          .stats-row { gap: 24px; }
+        }
+
         .stat-item {
           display: flex;
-          flex-content: column;
           flex-direction: column;
           gap: 4px;
         }
@@ -237,7 +247,7 @@ export default function App() {
 
         /* Секции общие */
         .section {
-          padding: 120px 24px;
+          padding: 100px 24px;
           max-width: 1100px;
           margin: 0 auto;
         }
@@ -266,7 +276,7 @@ export default function App() {
         /* Сетка Features */
         .features-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
           gap: 24px;
         }
 
@@ -307,7 +317,7 @@ export default function App() {
         /* Цены */
         .pricing-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
           gap: 32px;
         }
 
@@ -408,7 +418,7 @@ export default function App() {
 
         .price-card.popular .btn-pricing:hover {
           background: #e5e5ea;
-        } cleavage
+        }
 
         .price-card:not(.popular) .btn-pricing {
           background: rgba(255, 255, 255, 0.04);
@@ -465,10 +475,6 @@ export default function App() {
         .arrow {
           transition: transform 0.2s ease;
           color: #48484a;
-        }
-
-        .faq-item.active .arrow {
-          transform: rotate(180px);
         }
 
         /* Футер */
@@ -581,33 +587,4 @@ export default function App() {
             <h3>Hide Gadget</h3>
             <p>Оптимизация сетевых пакетов анимации для маскировки момента активации ключевых способностей (например, динамита).</p>
           </div>
-          <div className="feature-card">
-            <div className="feature-icon">✨</div>
-            <h3>Hold2Shoot</h3>
-            <p>Адаптивный режим ведения непрерывного огня по удержанию триггера для всех классов персонажей.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">✨</div>
-            <h3>Show Ammo</h3>
-            <p>Дополнительный HUD-оверлей, транслирующий точный уровень шкалы боеприпасов и перезарядки оппонентов.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">✨</div>
-            <h3>AutoFarm System</h3>
-            <p>Автоматизированный скрипт симуляции игровых сессий для оптимизации рутинных процессов на низких рангах.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Раздел Pricing (Цены) */}
-      <section id="pricing" className="section">
-        <div className="section-header" style={{textAlign: 'center'}}>
-          <span className="section-subtitle">Premium Access</span>
-          <h2 className="section-title">Тарифные планы платформы</h2>
-        </div>
-        <div className="pricing-grid">
-          <div className="price-card">
-            <h3>Starter Access</h3>
-            <div className="price-amount">
-              <span className="price-num">250</span>
-              <span className="price-currency">Telegram Stars / 30 дней
+          <div className

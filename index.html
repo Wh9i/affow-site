@@ -11,6 +11,20 @@
       50% { opacity: 0.4; transform: scale(1.1); }
     }
     .animate-pulse-slow { animation: pulse-slow 2s infinite ease-in-out; }
+
+    /* Стили для анимации появления при скролле */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    
+    /* Класс, который добавится через JavaScript при прокрутке */
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body class="bg-[#050505] text-[#a3a3a3] antialiased font-sans selection:bg-white selection:text-black pb-20">
@@ -77,14 +91,14 @@
     </div>
   </header>
 
-  <section id="features" class="max-w-6xl mx-auto px-6 pt-24 pb-12">
+  <section id="features" class="max-w-6xl mx-auto px-6 pt-24 pb-12 reveal">
     <div class="mb-14">
       <span class="text-xs font-bold text-[#5856d6] uppercase tracking-widest block mb-2">Modules Architecture</span>
       <h2 class="text-white text-3xl font-semibold tracking-tight">Архитектура софта Flawless</h2>
     </div>
     
     <div class="space-y-16">
-      <div>
+      <div class="reveal">
         <h3 class="text-white/40 text-xs font-bold uppercase tracking-wider mb-6 flex items-center gap-2">
           <span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span> Combat Modules
         </h3>
@@ -112,7 +126,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="reveal">
         <h3 class="text-white/40 text-xs font-bold uppercase tracking-wider mb-6 flex items-center gap-2">
           <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Visuals Modules
         </h3>
@@ -132,7 +146,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="reveal">
         <h3 class="text-white/40 text-xs font-bold uppercase tracking-wider mb-6 flex items-center gap-2">
           <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> Optimization Modules
         </h3>
@@ -154,7 +168,7 @@
     </div>
   </section>
 
-  <section id="showcase" class="max-w-5xl mx-auto px-6 py-12 text-center">
+  <section id="showcase" class="max-w-5xl mx-auto px-6 py-12 text-center reveal">
     <div class="max-w-4xl mx-auto relative group">
       <div class="absolute inset-0 bg-[#5856d6]/10 rounded-2xl blur-3xl opacity-60 group-hover:opacity-80 transition-opacity pointer-events-none"></div>
       <div class="relative rounded-2xl border border-white/10 bg-[#0d0d0d] p-2 overflow-hidden shadow-2xl">
@@ -167,7 +181,7 @@
     </div>
   </section>
 
-  <section id="pricing" class="max-w-6xl mx-auto px-6 py-24">
+  <section id="pricing" class="max-w-6xl mx-auto px-6 py-24 reveal">
     <div class="text-center mb-16">
       <span class="text-xs font-bold text-[#636366] uppercase tracking-widest block mb-2">Premium Access</span>
       <h2 class="text-white text-3xl font-semibold tracking-tight mb-3">Тарифные планы платформы</h2>
@@ -204,7 +218,7 @@
     </div>
   </section>
 
-  <section id="faq" class="max-w-3xl mx-auto px-6 py-24">
+  <section id="faq" class="max-w-3xl mx-auto px-6 py-24 reveal">
     <div class="text-center mb-14">
       <span class="text-xs font-bold text-[#636366] uppercase tracking-widest block mb-2">FAQ</span>
       <h2 class="text-white text-3xl font-semibold tracking-tight">Вопросы и ответы</h2>
@@ -263,7 +277,7 @@
     </div>
   </section>
 
-  <section id="contact" class="max-w-4xl mx-auto px-6 py-12">
+  <section id="contact" class="max-w-4xl mx-auto px-6 py-12 reveal">
     <div class="relative rounded-3xl border border-white/5 bg-white/[0.01] p-8 sm:p-12 overflow-hidden text-center">
       <div class="absolute -bottom-20 -right-20 w-60 h-60 bg-[#5856d6]/10 rounded-full blur-3xl pointer-events-none"></div>
       
@@ -297,6 +311,24 @@
         }
       }
     }
+
+    // Скрипт отслеживания скролла для плавной анимации элементов
+    document.addEventListener('DOMContentLoaded', () => {
+      const reveals = document.querySelectorAll('.reveal');
+      
+      const revealOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target); // Останавливаем слежку, чтобы анимация сработала один раз
+          }
+        });
+      }, {
+        threshold: 0.15 // Элемент анимируется, когда 15% его площади видны на экране
+      });
+
+      reveals.forEach(reveal => revealOnScroll.observe(reveal));
+    });
   </script>
 </body>
 </html>

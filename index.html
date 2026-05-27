@@ -25,6 +25,14 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Стиль для красивого неоново-фиолетового заголовка */
+    .neon-brand-title {
+      background: linear-gradient(135deg, #ffffff 20%, #c084fc 60%, #a855f7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.35));
+    }
   </style>
 </head>
 <body class="bg-[#050505] text-[#a3a3a3] antialiased font-sans selection:bg-white selection:text-black pb-20">
@@ -59,13 +67,12 @@
       <span>PC Emulator</span>
     </div>
     
-    <h1 class="text-white text-4xl sm:text-6xl font-bold tracking-tight max-w-4xl mx-auto mb-6 leading-[1.1]">
-      Будущее соревновательной<br />оптимизации Brawl Stars
+    <h1 class="font-bold tracking-tight max-w-4xl mx-auto mb-12 leading-[1.15]">
+      <span class="neon-brand-title text-5xl sm:text-7xl block mb-4">Flawless Private</span>
+      <span class="text-lg sm:text-xl text-purple-200/70 font-normal tracking-normal max-w-2xl mx-auto block">
+        — твоя игра расцветает вместе с нами, а мы с вами!
+      </span>
     </h1>
-    
-    <p class="text-[#8e8e93] text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-      Продвинутые интеллектуальные модули внешней визуализации данных, разработанные для глубокого анализа игрового процесса и калибровки отклика.
-    </p>
     
     <div class="flex justify-center gap-4 mb-16">
       <a href="https://t.me/enuau" class="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white px-7 py-3.5 rounded-xl text-md font-medium hover:bg-white/10 transition-all">
@@ -194,141 +201,4 @@
           <span class="text-white text-4xl font-bold tracking-tight">250</span>
           <span class="text-[#8e8e93] text-sm font-medium">Stars / 30 дней</span>
         </div>
-        <a href="https://t.me/antiscamprjectbot" class="w-full py-3.5 rounded-xl text-center text-sm font-semibold bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all">Приобрести тариф</a>
-      </div>
-
-      <div class="bg-white/[0.02] border border-white/15 rounded-3xl p-8 flex flex-col relative transition-all">
-        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#5856d6] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Выгодно</span>
-        <h3 class="text-white font-medium text-xl mb-4">Extended Access</h3>
-        <div class="flex items-baseline gap-1.5 mb-8">
-          <span class="text-white text-4xl font-bold tracking-tight">500</span>
-          <span class="text-[#8e8e93] text-sm font-medium">Stars / 90 дней</span>
-        </div>
-        <a href="https://t.me/antiscamprjectbot" class="w-full py-3.5 rounded-xl text-center text-sm font-semibold bg-white text-black hover:bg-[#e5e5ea] transition-all">Приобрести тариф</a>
-      </div>
-
-      <div class="bg-white/[0.01] border border-white/5 rounded-3xl p-8 flex flex-col transition-all">
-        <h3 class="text-white font-medium text-xl mb-4">Infinite Access</h3>
-        <div class="flex items-baseline gap-1.5 mb-8">
-          <span class="text-white text-4xl font-bold tracking-tight">750</span>
-          <span class="text-[#8e8e93] text-sm font-medium">Stars / Навсегда</span>
-        </div>
-        <a href="https://t.me/antiscamprjectbot" class="w-full py-3.5 rounded-xl text-center text-sm font-semibold bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all">Приобрести тариф</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq" class="max-w-3xl mx-auto px-6 py-24 reveal">
-    <div class="text-center mb-14">
-      <span class="text-xs font-bold text-[#636366] uppercase tracking-widest block mb-2">FAQ</span>
-      <h2 class="text-white text-3xl font-semibold tracking-tight">Вопросы и ответы</h2>
-    </div>
-    
-    <div class="flex flex-col gap-3">
-      <div class="border border-white/5 bg-white/[0.02] rounded-2xl overflow-hidden">
-        <button class="w-full p-6 bg-transparent text-left cursor-pointer flex justify-between items-center text-white font-medium text-base hover:bg-white/[0.04]" onclick="toggleFaq(0)">
-          <span>Это безопасно для учетной записи?</span>
-          <span id="faq-arrow-0" class="text-[#48484a] transition-transform duration-200">↓</span>
-        </button>
-        <div id="faq-content-0" class="hidden px-6 pb-6 text-sm text-[#636366] leading-relaxed">
-          Да. Наш продукт использует легитимную систему внешнего аналитического оверлея (External Overlay), работающую поверх экрана без прямого изменения исполняемого кода игры.
-        </div>
-      </div>
-
-      <div class="border border-white/5 bg-white/[0.02] rounded-2xl overflow-hidden">
-        <button class="w-full p-6 bg-transparent text-left cursor-pointer flex justify-between items-center text-white font-medium text-base hover:bg-white/[0.04]" onclick="toggleFaq(1)">
-          <span>Какие платформы поддерживаются?</span>
-          <span id="faq-arrow-1" class="text-[#48484a] transition-transform duration-200">↓</span>
-        </button>
-        <div id="faq-content-1" class="hidden px-6 pb-6 text-sm text-[#636366] leading-relaxed">
-          Модули полностью оптимизированы для мобильных операционных систем iOS, Android, а также адаптированы для стабильной работы на ПК-эмуляторах.
-        </div>
-      </div>
-
-      <div class="border border-white/5 bg-white/[0.02] rounded-2xl overflow-hidden">
-        <button class="w-full p-6 bg-transparent text-left cursor-pointer flex justify-between items-center text-white font-medium text-base hover:bg-white/[0.04]" onclick="toggleFaq(2)">
-          <span>Как часто выходят обновления системы?</span>
-          <span id="faq-arrow-2" class="text-[#48484a] transition-transform duration-200">↓</span>
-        </button>
-        <div id="faq-content-2" class="hidden px-6 pb-6 text-sm text-[#636366] leading-relaxed">
-          Регулярно. Наша команда мониторит каждое техническое обновление игры. Облачные сигнатуры безопасности обновляются на стороне сервера автоматически в течение пары часов после патча.
-        </div>
-      </div>
-
-      <div class="border border-white/5 bg-white/[0.02] rounded-2xl overflow-hidden">
-        <button class="w-full p-6 bg-transparent text-left cursor-pointer flex justify-between items-center text-white font-medium text-base hover:bg-white/[0.04]" onclick="toggleFaq(3)">
-          <span>Влияет ли работа софта на нагрев устройства или заряд батареи?</span>
-          <span id="faq-arrow-3" class="text-[#48484a] transition-transform duration-200">↓</span>
-        </button>
-        <div id="faq-content-3" class="hidden px-6 pb-6 text-sm text-[#636366] leading-relaxed">
-          Нет. Flawless написан на низкоуровневом оптимизированном коде. Алгоритмы рендеринга практически не создают дополнительную нагрузку на процессор, сохраняя стабильную автономность.
-        </div>
-      </div>
-
-      <div class="border border-white/5 bg-white/[0.02] rounded-2xl overflow-hidden">
-        <button class="w-full p-6 bg-transparent text-left cursor-pointer flex justify-between items-center text-white font-medium text-base hover:bg-white/[0.04]" onclick="toggleFaq(4)">
-          <span>Виден ли визуальный оверлей на стримах или при записи видео?</span>
-          <span id="faq-arrow-4" class="text-[#48484a] transition-transform duration-200">↓</span>
-        </button>
-        <div id="faq-content-4" class="hidden px-6 pb-6 text-sm text-[#636366] leading-relaxed">
-          Благодаря встроенной технологии Stream Proof, все графические модули (Xray, Ammo Bars) захватываются только вашим экраном. На стримах, в OBS или при записи видео зрители увидят чистый стандартный геймплей.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="max-w-4xl mx-auto px-6 py-12 reveal">
-    <div class="relative rounded-3xl border border-white/5 bg-white/[0.01] p-8 sm:p-12 overflow-hidden text-center">
-      <div class="absolute -bottom-20 -right-20 w-60 h-60 bg-[#5856d6]/10 rounded-full blur-3xl pointer-events-none"></div>
-      
-      <h3 class="text-white text-2xl font-semibold tracking-tight mb-3">Остались вопросы или есть предложения?</h3>
-      <p class="text-[#636366] text-sm max-w-xl mx-auto mb-8 leading-relaxed">
-        Если вы хотите обсудить коммерческое сотрудничество, медиа-партнерство (для блогеров и команд) или у вас возникли технические вопросы по софту — пишите напрямую в личные сообщения.
-      </p>
-      
-      <a href="https://t.me/affow" class="inline-flex items-center gap-2 bg-white text-black text-sm font-semibold px-8 py-3.5 rounded-full hover:bg-[#e5e5ea] hover:scale-[1.02] active:scale-[0.98] transition-all">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="mt-0.5"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
-        Связаться: @affow
-      </a>
-    </div>
-  </section>
-
-  <footer class="border-t border-white/5 pt-14 px-6 text-center sm:text-left text-xs text-[#3a3a3c]">
-    <p>© 2026 FLAWLESS SOFTWARE. Все права защищены. Статус: Stable & Online</p>
-  </footer>
-
-  <script>
-    function toggleFaq(id) {
-      const content = document.getElementById(`faq-content-${id}`);
-      const arrow = document.getElementById(`faq-arrow-${id}`);
-      if (content && arrow) {
-        if (content.classList.contains('hidden')) {
-          content.classList.remove('hidden');
-          arrow.style.transform = 'rotate(180deg)';
-        } else {
-          content.classList.add('hidden');
-          arrow.style.transform = 'rotate(0deg)';
-        }
-      }
-    }
-
-    // Скрипт отслеживания скролла для плавной анимации элементов
-    document.addEventListener('DOMContentLoaded', () => {
-      const reveals = document.querySelectorAll('.reveal');
-      
-      const revealOnScroll = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            observer.unobserve(entry.target); // Останавливаем слежку, чтобы анимация сработала один раз
-          }
-        });
-      }, {
-        threshold: 0.15 // Элемент анимируется, когда 15% его площади видны на экране
-      });
-
-      reveals.forEach(reveal => revealOnScroll.observe(reveal));
-    });
-  </script>
-</body>
-</html>
+        <a href="https://t.me/antiscamprjectbot" class="w-full py-3.5 rounded-xl text-center text-sm font-semibold bg-white/5 border border-white/10 text-white hover:

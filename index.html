@@ -7,20 +7,20 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @keyframes pulse-slow {
-      0%, 100__ { opacity: 1; transform: scale(1); }
-      50__ { opacity: 0.4; transform: scale(1.1); }
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.1); }
     }
     .animate-pulse-slow { animation: pulse-slow 2s infinite ease-in-out; }
 
     /* Анимации Apple-style живого фона */
     @keyframes float-blob-1 {
-      0%, 100__ { transform: translate(0px, 0px) scale(1); }
-      33__ { transform: translate(60px, -80px) scale(1.1); }
-      66__ { transform: translate(-40px, 40px) scale(0.9); }
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      33% { transform: translate(60px, -80px) scale(1.1); }
+      66% { transform: translate(-40px, 40px) scale(0.9); }
     }
     @keyframes float-blob-2 {
-      0%, 100__ { transform: translate(0px, 0px) scale(1); }
-      50__ { transform: translate(-80px, 60px) scale(1.15); }
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      50% { transform: translate(-80px, 60px) scale(1.15); }
     }
     .animate-blob-1 { animation: float-blob-1 25s infinite ease-in-out; }
     .animate-blob-2 { animation: float-blob-2 30s infinite ease-in-out; }
@@ -115,7 +115,7 @@
         </span>
       </div>
       
-      <!-- Красивый статус без банов -->
+      <!-- Статус без банов -->
       <div class="flex items-center gap-2.5 bg-gradient-to-r from-purple-500/10 to-indigo-500/5 border border-purple-500/10 px-5 py-2.5 rounded-xl">
         <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
@@ -323,7 +323,7 @@
     </div>
   </section>
 
-  <!-- Секция FAQ (Часто задаваемые вопросы) -->
+  <!-- Секция FAQ -->
   <section id="faq" class="relative z-10 max-w-4xl mx-auto px-6 py-24 reveal">
     <div class="text-center mb-14">
       <span class="text-xs font-bold text-[#5856d6] uppercase tracking-widest block mb-2">Questions & Answers</span>

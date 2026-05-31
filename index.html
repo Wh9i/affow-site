@@ -74,7 +74,7 @@
       </span>
     </h1>
     
-    <div class="flex justify-center gap-4 mb-16">
+    <div class="flex justify-center gap-4 mb-12">
       <a href="https://t.me/enuau" class="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white px-7 py-3.5 rounded-xl text-md font-medium hover:bg-white/10 transition-all">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
         Community
@@ -82,18 +82,24 @@
       <a href="#features" class="text-[#636366] hover:text-[#aeaeb2] px-7 py-3.5 text-md font-medium transition-colors flex items-center">Explore Features →</a>
     </div>
 
-    <div class="flex justify-center gap-12 sm:gap-16 border-t border-white/[0.03] pt-10 max-w-xl mx-auto">
-      <div class="flex flex-col gap-1">
-        <span class="text-white text-2xl font-semibold tracking-tight">120 FPS</span>
-        <span class="text-[#48484a] text-xs font-semibold uppercase tracking-wider">Target Speed</span>
+    <!-- ОБНОВЛЕННЫЙ БЛОК: ОНЛАЙН И СТАТИСТИКА БАНОВ -->
+    <div class="flex flex-col items-center justify-center border-t border-white/[0.03] pt-10 max-w-md mx-auto gap-5">
+      <!-- Счетчик игроков в реальном времени -->
+      <div class="inline-flex items-center gap-2 bg-green-500/5 border border-green-500/10 px-4 py-1.5 rounded-full">
+        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+        <span class="text-[#8e8e93] text-xs font-medium tracking-wide">
+          Сейчас онлайн: <span class="text-white font-bold font-mono text-sm ml-0.5">914</span> игроков
+        </span>
       </div>
-      <div class="flex flex-col gap-1">
-        <span class="text-white text-2xl font-semibold tracking-tight">18ms</span>
-        <span class="text-[#48484a] text-xs font-semibold uppercase tracking-wider">Avg Latency</span>
-      </div>
-      <div class="flex flex-col gap-1">
-        <span class="text-white text-2xl font-semibold tracking-tight">99.9%</span>
-        <span class="text-[#48484a] text-xs font-semibold uppercase tracking-wider">Uptime</span>
+      
+      <!-- Красивый статус без банов -->
+      <div class="flex items-center gap-2.5 bg-gradient-to-r from-purple-500/10 to-indigo-500/5 border border-purple-500/10 px-5 py-2.5 rounded-xl">
+        <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+        </svg>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-purple-400 text-sm sm:text-base font-semibold tracking-wide">
+          Уже 320 дней без бана
+        </span>
       </div>
     </div>
   </header>
@@ -322,10 +328,9 @@
     </div>
   </section>
 
-  <!-- НОВЫЙ ИНТЕРАКТИВНЫЙ БЛОК: КРАСИВЫЙ И ВИДНЫЙ ПЕРЕХОД НА ТВОЙ ТГ -->
+  <!-- ИНТЕРАКТИВНЫЙ БЛОК: ПЕРЕХОД НА ТВОЙ ТГ -->
   <section class="max-w-4xl mx-auto px-6 pb-20 reveal">
     <div class="relative rounded-3xl overflow-hidden border border-purple-500/20 bg-gradient-to-br from-purple-950/20 via-[#0a0a0a] to-black p-8 sm:p-12 text-center shadow-[0_0_50px_rgba(168,85,247,0.15)]">
-      <!-- Размытый фиолетовый неоновый круг на заднем плане -->
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-72 bg-purple-500/10 blur-3xl rounded-full pointer-events-none"></div>
       
       <div class="relative z-10">
@@ -339,7 +344,6 @@
           Возникли трудности с настройкой, есть коммерческое предложение или слетел аппаратный ключ привязки софта? Напиши напрямую Главному Разработчику и Владельцу проекта <span class="text-white font-semibold">Flawless Private</span>.
         </p>
         
-        <!-- Огромная стильная кнопка-ссылка -->
         <a href="https://t.me/affow" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-[#c084fc] to-[#a855f7] text-white font-bold px-8 py-4 sm:px-10 sm:py-5 rounded-2xl shadow-[0_0_30px_rgba(168,85,247,0.3)] hover:shadow-[0_0_45px_rgba(168,85,247,0.5)] hover:scale-[1.03] active:scale-[0.98] transition-all text-sm tracking-wide group">
           <svg class="w-5 h-5 fill-current transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24">
             <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/>

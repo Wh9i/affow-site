@@ -12,20 +12,26 @@
     }
     .animate-pulse-slow { animation: pulse-slow 2s infinite ease-in-out; }
 
-    /* Анимации Apple-style живого фона */
+    /* Заметная и плавная анимация неоновых сфер */
     @keyframes float-blob-1 {
       0%, 100% { transform: translate(0px, 0px) scale(1); }
-      33% { transform: translate(60px, -80px) scale(1.1); }
-      66% { transform: translate(-40px, 40px) scale(0.9); }
+      33% { transform: translate(80px, -120px) scale(1.2); }
+      66% { transform: translate(-60px, 60px) scale(0.85); }
     }
     @keyframes float-blob-2 {
       0%, 100% { transform: translate(0px, 0px) scale(1); }
-      50% { transform: translate(-80px, 60px) scale(1.15); }
+      50% { transform: translate(-100px, 80px) scale(1.25); }
     }
-    .animate-blob-1 { animation: float-blob-1 25s infinite ease-in-out; }
-    .animate-blob-2 { animation: float-blob-2 30s infinite ease-in-out; }
+    .animate-blob-1 { 
+      animation: float-blob-1 12s infinite ease-in-out; 
+      will-change: transform;
+    }
+    .animate-blob-2 { 
+      animation: float-blob-2 15s infinite ease-in-out; 
+      will-change: transform;
+    }
 
-    /* Стили для анимации появления при скролле */
+    /* Стили для появления элементов при скролле */
     .reveal {
       opacity: 0;
       transform: translateY(40px);
@@ -38,25 +44,25 @@
       transform: translateY(0);
     }
 
-    /* Мягкое неоново-фиолетовое свечение для твоего бренда */
+    /* Градиент и свечение для заголовка */
     .neon-brand-title {
       background: linear-gradient(135deg, #ffffff 30%, #c084fc 70%, #a855f7 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.4));
+      filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.3));
     }
   </style>
 </head>
 <body class="bg-[#050505] text-[#a3a3a3] antialiased font-sans selection:bg-white selection:text-black pb-10 relative overflow-x-hidden">
 
-  <!-- ЖИВОЙ АНИМИРОВАННЫЙ ФОН В СТИЛЕ APPLE -->
+  <!-- ЖИВОЙ АНИМИРОВАННЫЙ ФОН (ТЕПЕРЬ НАГЛЯДНЫЙ) -->
   <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-    <!-- Верхняя левая фиолетовая сфера -->
-    <div class="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-purple-600/[0.06] blur-[130px] mix-blend-screen animate-blob-1"></div>
-    <!-- Ниже правая глубокая индиго сфера -->
-    <div class="absolute bottom-[15%] right-[-5%] w-[65vw] h-[65vw] rounded-full bg-indigo-600/[0.05] blur-[150px] mix-blend-screen animate-blob-2"></div>
-    <!-- Центральная мягкая сфера для перелива -->
-    <div class="absolute top-[35%] left-[20%] w-[50vw] h-[50vw] rounded-full bg-purple-500/[0.03] blur-[140px] mix-blend-screen animate-blob-1" style="animation-delay: -7s;"></div>
+    <!-- Левая верхняя фиолетовая сфера -->
+    <div class="absolute top-[-5%] left-[-5%] w-[55vw] h-[55vw] rounded-full bg-purple-600/20 blur-[110px] animate-blob-1"></div>
+    <!-- Правая нижняя глубокая индиго сфера -->
+    <div class="absolute bottom-[10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-indigo-600/20 blur-[130px] animate-blob-2"></div>
+    <!-- Центральная розовая сфера для красивого перелива цветов -->
+    <div class="absolute top-[30%] left-[20%] w-[45vw] h-[45vw] rounded-full bg-fuchsia-500/15 blur-[110px] animate-blob-1" style="animation-delay: -4s;"></div>
   </div>
 
   <nav class="fixed top-0 w-full z-50 bg-[#050505]/75 backdrop-blur-xl border-b border-white/5 py-5">
@@ -105,9 +111,7 @@
       <a href="#features" class="text-[#636366] hover:text-[#aeaeb2] px-7 py-3.5 text-md font-medium transition-colors flex items-center">Explore Features →</a>
     </div>
 
-    <!-- ОБНОВЛЕННЫЙ БЛОК: ОНЛАЙН И СТАТИСТИКА БАНОВ -->
     <div class="flex flex-col items-center justify-center border-t border-white/[0.03] pt-10 max-w-md mx-auto gap-5">
-      <!-- Счетчик игроков в реальном времени -->
       <div class="inline-flex items-center gap-2 bg-green-500/5 border border-green-500/10 px-4 py-1.5 rounded-full">
         <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
         <span class="text-[#8e8e93] text-xs font-medium tracking-wide">
@@ -115,7 +119,6 @@
         </span>
       </div>
       
-      <!-- Статус без банов -->
       <div class="flex items-center gap-2.5 bg-gradient-to-r from-purple-500/10 to-indigo-500/5 border border-purple-500/10 px-5 py-2.5 rounded-xl">
         <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
@@ -217,7 +220,6 @@
     </div>
   </section>
 
-  <!-- Пошаговая Инструкция активации софта -->
   <section id="onboarding" class="relative z-10 max-w-6xl mx-auto px-6 py-24 reveal">
     <div class="mb-14 text-center sm:text-left">
       <span class="text-xs font-bold text-[#a855f7] uppercase tracking-widest block mb-2">Onboarding Guide</span>
@@ -250,7 +252,6 @@
       </div>
     </div>
 
-    <!-- Информационный блок про HWID Lock -->
     <div class="mt-12 bg-gradient-to-r from-purple-950/10 to-[#5856d6]/5 border border-purple-500/10 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
       <div class="max-w-2xl">
         <h4 class="text-white font-semibold text-md mb-1.5 flex items-center gap-2">
@@ -267,7 +268,6 @@
     </div>
   </section>
 
-  <!-- Секция Тарифных планов -->
   <section id="pricing" class="relative z-10 max-w-6xl mx-auto px-6 py-12 reveal">
     <div class="text-center mb-16">
       <span class="text-xs font-bold text-[#636366] uppercase tracking-widest block mb-2">Premium Access</span>
@@ -275,7 +275,6 @@
     </div>
     
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Тариф 1 -->
       <div class="bg-white/[0.01] border border-white/5 rounded-3xl p-8 flex flex-col transition-all hover:border-white/10">
         <h3 class="text-white font-medium text-xl mb-4">Starter Access</h3>
         <div class="flex items-baseline gap-1.5 mb-8">
@@ -290,7 +289,6 @@
         <a href="https://t.me/antiscamprjectbot" class="w-full text-center bg-white/5 text-white border border-white/10 rounded-xl py-3 text-xs font-semibold hover:bg-white/10 transition-all">Оформить подписку</a>
       </div>
 
-      <!-- Тариф 2 -->
       <div class="bg-white/[0.02] border border-purple-500/30 rounded-3xl p-8 flex flex-col relative transition-all shadow-[0_0_30px_rgba(168,85,247,0.05)]">
         <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#c084fc] to-[#a855f7] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">Popular</div>
         <h3 class="text-white font-medium text-xl mb-4">Extended Access</h3>
@@ -306,7 +304,6 @@
         <a href="https://t.me/antiscamprjectbot" class="w-full text-center bg-gradient-to-r from-[#c084fc] to-[#a855f7] text-white rounded-xl py-3 text-xs font-semibold hover:opacity-90 transition-all">Оформить подписку</a>
       </div>
 
-      <!-- Тариф 3 -->
       <div class="bg-white/[0.01] border border-white/5 rounded-3xl p-8 flex flex-col transition-all hover:border-white/10">
         <h3 class="text-white font-medium text-xl mb-4">Ultimate Access</h3>
         <div class="flex items-baseline gap-1.5 mb-8">
@@ -323,7 +320,6 @@
     </div>
   </section>
 
-  <!-- Секция FAQ -->
   <section id="faq" class="relative z-10 max-w-4xl mx-auto px-6 py-24 reveal">
     <div class="text-center mb-14">
       <span class="text-xs font-bold text-[#5856d6] uppercase tracking-widest block mb-2">Questions & Answers</span>
@@ -331,19 +327,16 @@
     </div>
 
     <div class="space-y-4">
-      <!-- Вопрос 1 -->
       <div class="bg-white/[0.01] border border-white/5 rounded-2xl p-6">
         <h4 class="text-white text-sm font-medium mb-2">Безопасно ли использовать Flawless на основном аккаунте?</h4>
         <p class="text-[#636366] text-xs leading-relaxed">Наш софт использует метод External Overlay и уникальные алгоритмы обхода встроенного античита без прямого внедрения в код игры, что снижает риск детекта до минимума. Тем не менее, для 100% безопасности мы рекомендуем тестировать функции на дополнительных аккаунтах.</p>
       </div>
 
-      <!-- Вопрос 2 -->
       <div class="bg-white/[0.01] border border-white/5 rounded-2xl p-6">
         <h4 class="text-white text-sm font-medium mb-2">Как часто выходят обновления софта?</h4>
         <p class="text-[#636366] text-xs leading-relaxed">Обновления выпускаются автоматически при выходе каждого крупного патча или изменения архитектуры игры. Обычно актуализация сигнатур защиты занимает от нескольких минут до пары часов. Время подписки на этот период замораживается.</p>
       </div>
 
-      <!-- Вопрос 3 -->
       <div class="bg-white/[0.01] border border-white/5 rounded-2xl p-6">
         <h4 class="text-white text-sm font-medium mb-2">Что делать, если я сменил устройство или сбросился HWID?</h4>
         <p class="text-[#636366] text-xs leading-relaxed">В случае покупки нового девайса или глобального обновления системы, вы можете подать заявку на сброс HWID-привязки напрямую создателю проекта через контакты поддержки, указанные в подвале сайта.</p>
@@ -351,7 +344,6 @@
     </div>
   </section>
 
-  <!-- ИНТЕРАКТИВНЫЙ БЛОК: ПЕРЕХОД НА ТВОЙ ТГ -->
   <section class="relative z-10 max-w-4xl mx-auto px-6 pb-20 reveal">
     <div class="relative rounded-3xl overflow-hidden border border-purple-500/20 bg-gradient-to-br from-purple-950/20 via-[#0a0a0a] to-black p-8 sm:p-12 text-center shadow-[0_0_50px_rgba(168,85,247,0.15)]">
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-72 bg-purple-500/10 blur-3xl rounded-full pointer-events-none"></div>
@@ -377,7 +369,6 @@
     </div>
   </section>
 
-  <!-- МИНИМАЛИСТИЧНЫЙ ФУТЕР -->
   <footer class="relative z-10 border-t border-white/[0.03] mt-6 py-8 text-center">
     <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
       <p class="text-xs text-[#48484a]">&copy; 2026 FLAWLESS SOFTWARE. All rights reserved.</p>
@@ -385,7 +376,6 @@
     </div>
   </footer>
 
-  <!-- Скрипт для работы плавной анимации появления блоков при скролле -->
   <script>
     const revealElements = document.querySelectorAll('.reveal');
 

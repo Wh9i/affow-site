@@ -145,3 +145,259 @@
     <section id="features" class="max-w-6xl mx-auto px-6 pt-20 pb-12">
       <div class="mb-14 reveal">
         <span class="text-xs font-bold text-[#8b5cf6] uppercase tracking-widest block mb-2">Modules Architecture</span>
+        <h2 class="text-white text-4xl font-bold tracking-tight">Экосистема модулей</h2>
+      </div>
+      
+      <div class="space-y-16">
+        <div>
+          <h3 class="text-white/40 text-xs font-bold uppercase tracking-wider mb-6 flex items-center gap-2 reveal">
+            <span class="w-1.5 h-1.5 bg-red-500 rounded-full shadow-[0_0_8px_#ef4444]"></span> Combat
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white/[0.02] border border-white/5 rounded-3xl p-8 card-hover transition-all duration-500 reveal delay-100 relative overflow-hidden group">
+              <div class="absolute -right-4 -top-4 w-24 h-24 bg-red-500/10 rounded-full blur-2xl group-hover:bg-red-500/20 transition-all"></div>
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-red-500/20 to-orange-500/10 border border-red-500/20 flex items-center justify-center mb-5 sticker-float shadow-[0_0_20px_rgba(239,68,68,0.2)]">
+                <span class="text-2xl">⚡</span>
+              </div>
+              <h4 class="text-white font-medium text-xl mb-3">Auto Dodge</h4>
+              <p class="text-[#8e8e93] text-sm leading-relaxed">Алгоритм расчета векторов для уклонения от летящих объектов в авто-режиме.</p>
+            </div>
+
+            <div class="bg-white/[0.02] border border-white/5 rounded-3xl p-8 card-hover transition-all duration-500 reveal delay-200 relative overflow-hidden group">
+              <div class="absolute -right-4 -top-4 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all"></div>
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/10 border border-purple-500/20 flex items-center justify-center mb-5 sticker-float" style="animation-delay: 0.5s">
+                <span class="text-2xl">🎯</span>
+              </div>
+              <h4 class="text-white font-medium text-xl mb-3">Aim Assist</h4>
+              <p class="text-[#8e8e93] text-sm leading-relaxed">Корректировка векторов наведения с упреждением траектории цели.</p>
+            </div>
+
+            <div class="bg-white/[0.02] border border-white/5 rounded-3xl p-8 card-hover transition-all duration-500 reveal delay-300 relative overflow-hidden group">
+              <div class="absolute -right-4 -top-4 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all"></div>
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/10 border border-blue-500/20 flex items-center justify-center mb-5 sticker-float" style="animation-delay: 1s">
+                <span class="text-2xl">🔫</span>
+              </div>
+              <h4 class="text-white font-medium text-xl mb-3">Auto Shot</h4>
+              <p class="text-[#8e8e93] text-sm leading-relaxed">Автоматический выпуск снаряда при 100% вероятности попадания в хитбокс.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-white/40 text-xs font-bold uppercase tracking-wider mb-6 flex items-center gap-2 reveal">
+            <span class="w-1.5 h-1.5 bg-indigo-500 rounded-full shadow-[0_0_8px_#6366f1]"></span> Visuals
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white/[0.02] border border-white/5 rounded-3xl p-8 card-hover transition-all duration-500 reveal delay-100 relative overflow-hidden group">
+              <div class="absolute -right-4 -top-4 w-24 h-24 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all"></div>
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-blue-500/10 border border-indigo-500/20 flex items-center justify-center mb-5 sticker-float shadow-[0_0_20px_rgba(99,102,241,0.2)]">
+                <span class="text-2xl">👁️</span>
+              </div>
+              <h4 class="text-white font-medium text-xl mb-3">Xray Vision</h4>
+              <p class="text-[#8e8e93] text-sm leading-relaxed">Графическое наложение, отображающее контуры объектов в кустах и слепых зонах.</p>
+            </div>
+
+            <div class="bg-white/[0.02] border border-white/5 rounded-3xl p-8 card-hover transition-all duration-500 reveal delay-200 relative overflow-hidden group">
+              <div class="absolute -right-4 -top-4 w-24 h-24 bg-yellow-500/10 rounded-full blur-2xl group-hover:bg-yellow-500/20 transition-all"></div>
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-orange-500/10 border border-yellow-500/20 flex items-center justify-center mb-5 sticker-float" style="animation-delay: 0.8s">
+                <span class="text-2xl">🔋</span>
+              </div>
+              <h4 class="text-white font-medium text-xl mb-3">Enemy Ammo Bar</h4>
+              <p class="text-[#8e8e93] text-sm leading-relaxed">Дополнительный HUD, транслирующий точный уровень шкалы патронов.</p>
+            </div>
+
+            <div class="bg-white/[0.02] border border-white/5 rounded-3xl p-8 card-hover transition-all duration-500 reveal delay-300 relative overflow-hidden group">
+              <div class="absolute -right-4 -top-4 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-green-500/10 border border-emerald-500/20 flex items-center justify-center mb-5 sticker-float" style="animation-delay: 1.2s">
+                <span class="text-2xl">❤️</span>
+              </div>
+              <h4 class="text-white font-medium text-xl mb-3">Show Health</h4>
+              <p class="text-[#8e8e93] text-sm leading-relaxed">Детализированное отображение HP соперников в реальном времени.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="max-w-6xl mx-auto px-6 py-12">
+      <div class="text-center mb-16 reveal">
+        <span class="text-xs font-bold text-[#636366] uppercase tracking-widest block mb-2">Premium Access</span>
+        <h2 class="text-white text-4xl font-bold tracking-tight mb-3">Тарифные планы</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div class="bg-white/[0.02] border border-white/5 rounded-[2rem] p-8 flex flex-col card-hover transition-all duration-500 reveal delay-100">
+          <h3 class="text-white font-medium text-xl mb-4">Starter Access</h3>
+          <div class="flex items-baseline gap-1.5 mb-8">
+            <span class="text-white text-4xl font-semibold tracking-tight">250 ₽</span>
+            <span class="text-[#636366] text-xs">/ 30 дней</span>
+          </div>
+          <ul class="space-y-4 text-sm text-[#8e8e93] flex-1 mb-8">
+            <li class="flex items-center gap-3"><span class="text-green-400 text-lg">✓</span> Базовые модули</li>
+            <li class="flex items-center gap-3"><span class="text-green-400 text-lg">✓</span> Стандартный обход</li>
+          </ul>
+          <a href="https://t.me/antiscamprjectbot" class="w-full text-center bg-white/5 text-white border border-white/10 rounded-2xl py-4 text-sm font-semibold hover:bg-white/10 transition-all duration-300">Выбрать</a>
+        </div>
+
+        <div class="bg-white/[0.03] border border-purple-500/40 rounded-[2rem] p-8 flex flex-col relative card-hover transition-all duration-500 shadow-[0_0_40px_rgba(168,85,247,0.15)] reveal delay-200">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#c084fc] to-[#8b5cf6] text-white text-[11px] font-bold uppercase tracking-widest px-5 py-2 rounded-full shadow-[0_0_20px_rgba(139,92,246,0.6)]">Hit</div>
+          <h3 class="text-white font-medium text-xl mb-4">Extended Access</h3>
+          <div class="flex items-baseline gap-1.5 mb-8">
+            <span class="text-white text-4xl font-semibold tracking-tight">600 ₽</span>
+            <span class="text-[#636366] text-xs">/ 90 дней</span>
+          </div>
+          <ul class="space-y-4 text-sm text-[#8e8e93] flex-1 mb-8">
+            <li class="flex items-center gap-3"><span class="text-purple-400 text-lg">✓</span> Приоритет FPS</li>
+            <li class="flex items-center gap-3"><span class="text-purple-400 text-lg">✓</span> Бета-модули</li>
+          </ul>
+          <a href="https://t.me/antiscamprjectbot" class="w-full text-center bg-gradient-to-r from-[#c084fc] to-[#8b5cf6] text-white rounded-2xl py-4 text-sm font-semibold hover:shadow-[0_0_25px_rgba(139,92,246,0.5)] transition-all duration-300">Выбрать</a>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/5 rounded-[2rem] p-8 flex flex-col card-hover transition-all duration-500 reveal delay-300 overflow-hidden relative">
+          <h3 class="text-white font-medium text-xl mb-4">Ultimate</h3>
+          <div class="flex items-baseline gap-1.5 mb-8">
+            <span class="text-white text-4xl font-semibold tracking-tight">1500 ₽</span>
+            <span class="text-[#636366] text-xs">/ Навсегда</span>
+          </div>
+          <ul class="space-y-4 text-sm text-[#8e8e93] flex-1 mb-8">
+            <li class="flex items-center gap-3"><span class="text-green-400 text-lg">✓</span> Lifetime</li>
+            <li class="flex items-center gap-3"><span class="text-green-400 text-lg">✓</span> Anti-HWID Ban</li>
+          </ul>
+          <a href="https://t.me/antiscamprjectbot" id="holo-sticker-btn" class="w-full text-center text-black rounded-2xl py-4 text-sm font-black uppercase tracking-widest transition-transform duration-300 shadow-[0_0_30px_rgba(255,0,128,0.3)] hover:scale-105" style="background: linear-gradient(var(--holo-angle, 135deg), #ff007f, #7f00ff, #00f0ff, #ff007f); background-size: 200% 200%;">Купить</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="max-w-4xl mx-auto px-6 py-24 reveal">
+      <div class="text-center mb-14">
+        <span class="text-xs font-bold text-[#5856d6] uppercase tracking-widest block mb-2">Questions & Answers</span>
+        <h2 class="text-white text-4xl font-bold tracking-tight">FAQ</h2>
+      </div>
+
+      <div class="space-y-4">
+        <div class="bg-white/[0.02] border border-white/5 rounded-2xl p-6 hover:bg-white/[0.04] transition-colors group">
+          <h4 class="text-white text-base font-medium mb-2 group-hover:text-purple-400 transition-colors">Безопасно ли использовать Flawless на основном аккаунте?</h4>
+          <p class="text-[#8e8e93] text-sm leading-relaxed">Наш софт использует метод External Overlay без прямого внедрения в код игры. Риск минимален, но мы всё же рекомендуем тестировать функционал на твинках.</p>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-2xl p-6 hover:bg-white/[0.04] transition-colors group">
+          <h4 class="text-white text-base font-medium mb-2 group-hover:text-purple-400 transition-colors">Работает ли софт на ПК эмуляторах?</h4>
+          <p class="text-[#8e8e93] text-sm leading-relaxed">Да, софт полностью совместим с популярными эмуляторами (Bluestacks, LDPlayer, MSI App Player) благодаря адаптивной системе ввода.</p>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-2xl p-6 hover:bg-white/[0.04] transition-colors group">
+          <h4 class="text-white text-base font-medium mb-2 group-hover:text-purple-400 transition-colors">Что будет при обновлении игры?</h4>
+          <p class="text-[#8e8e93] text-sm leading-relaxed">Мы автоматически обновляем сигнатуры за 1-2 часа после выхода патча. На это время подписки всех пользователей замораживаются.</p>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-2xl p-6 hover:bg-white/[0.04] transition-colors group">
+          <h4 class="text-white text-base font-medium mb-2 group-hover:text-purple-400 transition-colors">Возможен ли возврат средств (Refund)?</h4>
+          <p class="text-[#8e8e93] text-sm leading-relaxed">Возврат осуществляется в течение 24 часов после покупки, если ключ не был активирован или софт технически не запустился на вашем устройстве после помощи саппорта.</p>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-2xl p-6 hover:bg-white/[0.04] transition-colors group">
+          <h4 class="text-white text-base font-medium mb-2 group-hover:text-purple-400 transition-colors">Как сбросить HWID при смене телефона?</h4>
+          <p class="text-[#8e8e93] text-sm leading-relaxed">Владельцы тарифа Ultimate могут сбрасывать HWID безлимитно. Остальным нужно написать в поддержку с указанием старого и нового устройства.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-white/[0.05] mt-12 py-10 text-center relative z-10 backdrop-blur-md">
+      <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+        <p class="text-sm text-[#636366] font-medium">&copy; 2026 FLAWLESS SOFTWARE.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // 1. Мощный Scroll Reveal
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    });
+
+    // 2. Рандомный онлайн (900 - 1000) с анимацией изменения
+    const onlineEl = document.getElementById('online-counter');
+    setInterval(() => {
+      const current = parseInt(onlineEl.innerText);
+      const target = Math.floor(Math.random() * (1000 - 900 + 1)) + 900;
+      
+      // Создаем легкий эффект мигания при смене цифры
+      onlineEl.style.opacity = '0.5';
+      onlineEl.style.transform = 'scale(1.1)';
+      
+      setTimeout(() => {
+        onlineEl.innerText = target;
+        onlineEl.style.opacity = '1';
+        onlineEl.style.transform = 'scale(1)';
+      }, 200);
+    }, 4500); // Каждые 4.5 секунды
+
+    // 3. Система Live-уведомлений (Toasts) о покупках
+    const toastContainer = document.getElementById('toast-container');
+    const plans = ['Starter Access', 'Extended Access', 'Ultimate Access'];
+    
+    function generateId() {
+      // Генерирует ID вида "id75***59"
+      return 'id' + Math.floor(Math.random() * 90 + 10) + '***' + Math.floor(Math.random() * 90 + 10);
+    }
+
+    function showPurchaseToast() {
+      const plan = plans[Math.floor(Math.random() * plans.length)];
+      const user = generateId();
+      
+      const toast = document.createElement('div');
+      toast.className = 'toast-enter flex items-center gap-3 bg-[#0d0d0d]/90 backdrop-blur-xl border border-white/10 px-4 py-3 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.5)]';
+      
+      // Иконка корзины или галочки
+      const iconColor = plan.includes('Ultimate') ? 'text-pink-500' : plan.includes('Extended') ? 'text-purple-400' : 'text-green-400';
+      
+      toast.innerHTML = `
+        <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center ${iconColor}">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+        </div>
+        <div>
+          <p class="text-white text-[13px] font-medium leading-tight">Пользователь <span class="text-white/60">${user}</span></p>
+          <p class="text-[11px] ${iconColor} font-semibold mt-0.5">Купил ${plan}</p>
+        </div>
+      `;
+
+      toastContainer.appendChild(toast);
+
+      // Анимация появления
+      requestAnimationFrame(() => {
+        toast.classList.remove('toast-enter');
+        toast.classList.add('toast-active');
+      });
+
+      // Удаление через 4 секунды
+      setTimeout(() => {
+        toast.classList.remove('toast-active');
+        toast.classList.add('toast-leave');
+        setTimeout(() => toast.remove(), 400); // Ждем конца анимации
+      }, 4000);
+    }
+
+    // Запускаем уведомления в рандомном интервале (от 8 до 15 секунд)
+    function loopToasts() {
+      const randomTime = Math.floor(Math.random() * (15000 - 8000 + 1)) + 8000;
+      setTimeout(() => {
+        showPurchaseToast();
+        loopToasts();
+      }, randomTime);
+    }
+    
+    // Показываем первое уведомление через 3 секунды после захода на сайт
+    setTimeout(loopToasts, 3000);
+
+    // 4. Голографическая кнопка Ultimate
+    const holoBtn = document.getElementById('holo-sticker-btn');
+    document.addEventListener('mousemove', (e) => {
+      const angle = ((e.clientX / window.innerWidth) * 45 + (e.clientY / window.innerHeight) * 45) * 2.5; 
+      holoBtn.style.setProperty('--holo-angle', `${angle}deg`);
+    });
+  </script>
+</body>
+</html>
